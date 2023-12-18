@@ -10,30 +10,8 @@
   margin: 0 auto;
 }
 
-.header {
-    grid-area: h;
-    background-color: green;
-}
-.header img{
-  width: 40px;
-  height: 40px;
-}
-
-.nav {
-    grid-area: n;
-  background-color: bisque;
-  display: flex;
-  flex-direction: column;
-  grid-gap: 20px;
-  height: calc(100vh - 70px);
-
-}
-
-.main {
-    grid-area: m;
+.app-wrapper-content{
+  grid-area: m;
   background-color: blueviolet;
 }
-.main img{
-  height: 350px;
-  width: 100%;
-}
+

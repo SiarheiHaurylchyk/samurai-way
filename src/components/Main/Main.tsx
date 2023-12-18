@@ -1,14 +1,13 @@
 import React from 'react';
+import style from "./MyPosts/MyPosts.module.css";
+import MyPosts from "./MyPosts/MyPosts";
 
 function Main() {
     return (
-        <main className='main'>
+        <main className={style.main}>
             <img src="https://cs7.pikabu.ru/post_img/big/2017/12/14/6/151324248417431745.jpg" alt="main-img"/>
-            <div>ava+description</div>
-            <div>My post</div>
-            <div>New post</div>
-            <div>post1</div>
-            <div>post2</div>
+
+           <MyPosts/>
         </main>
     );
 }
