@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
-import Main from "./components/Main/Main";
+import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
@@ -16,9 +16,9 @@ function App() {
         <div className="app-wrapper">
             <Header/>
             <Nav/>
-            {/*<Main/>*/}
+
             <div className="app-wrapper-content">
-                <Route path={"/main"} component={Main} />
+                <Route path={"/main"} component={Profile} />
                 <Route path={"/dialogs"} component={Dialogs} />
                 <Route path={"/news"} component={News} />
                 <Route path={"/music"} component={Music} />
