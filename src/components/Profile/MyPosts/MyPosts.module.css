@@ -1,5 +1,7 @@
+.newPost{
+    margin-top: 20px;
+}
 
-.main img{
-    height: 350px;
-    width: 100%;
+.main{
+    margin-left: 20px;
 }
