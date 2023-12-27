@@ -1,19 +1,19 @@
 import React from 'react';
 import style from "./MyPosts.module.css"
 import Post from "./Post/Post";
+import {PostsItemsType} from "../../../index";
 
+type MessagePropsType ={
+    PostsItems: Array<PostsItemsType>
+}
+function MyPosts({ PostsItems }: MessagePropsType ) {
 
-function MyPosts() {
-
-    let posts = [
-        {text:"How are you?", like: 3 },
-        {text:"Hi man", like: 1 },
-    ]
-
-    let post = posts.map(e=>{
-       return <Post text ={e.text} like={e.like}/>
-    })
-
+    let post;
+    if (PostsItems !==undefined) {
+         post = PostsItems.map(e => {
+            return <Post text={e.text} like={e.like}/>
+        })
+    }
     return (
         <div className={style.main}>
             <div>

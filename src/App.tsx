@@ -8,9 +8,18 @@ import {BrowserRouter, Route} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import {messagesDataType, PostsItemsType, usersDataType} from "./index";
 
 
-function App() {
+
+export type AppPropsType = {
+    usersData: Array<usersDataType>,
+    messagesData: Array<messagesDataType>,
+    PostsItems: Array<PostsItemsType>
+}
+
+function App({messagesData,usersData,PostsItems}:AppPropsType) {
+
     return (
         <BrowserRouter>
         <div className="app-wrapper">
@@ -18,11 +27,11 @@ function App() {
             <Nav/>
 
             <div className="app-wrapper-content">
-                <Route exact path={"/"} component={Profile} />
-                <Route exact path={"/dialogs"} component={Dialogs} />
-                <Route exact path={"/news"} component={News} />
-                <Route exact path={"/music"} component={Music} />
-                <Route exact path={"/settings"} component={Settings} />
+                <Route exact path={"/"} render={()=><Profile PostsItems={PostsItems }/>} />
+                <Route exact path={"/dialogs"} render={() => <Dialogs messagesData={messagesData} usersData={usersData} />} />
+                <Route exact path={"/news"} render={()=><News/>} />
+                <Route exact path={"/music"} render={()=><Music/>} />
+                <Route exact path={"/settings"} render={()=><Settings/>} />
             </div>
         </div>
         </BrowserRouter>

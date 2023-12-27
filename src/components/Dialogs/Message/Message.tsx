@@ -1,5 +1,6 @@
 import React from 'react';
-import {messagesDataType} from "../Dialogs";
+import {messagesDataType} from "../../../index";
+
 
 function Message({message,id}:messagesDataType) {
     return (

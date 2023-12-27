@@ -2,12 +2,17 @@ import React from 'react';
 
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import {PostsItemsType} from "../../index";
 
-function Profile() {
+export type ProfilePropsType = {
+    PostsItems: Array<PostsItemsType>
+}
+
+function Profile( { PostsItems }: ProfilePropsType ) {
     return (
         <main>
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts PostsItems={PostsItems}/>
         </main>
     );
 }
